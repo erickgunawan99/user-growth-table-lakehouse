@@ -1,4 +1,4 @@
-#The workflow:
+# The workflow:
 
 1. Raw Input (Physical Partitions): Your daily_user_date.parquet files sit in MinIO, explicitly organized into /event_date=.../ folders. This is the Hive Storage Format (schema-on-read).
 
