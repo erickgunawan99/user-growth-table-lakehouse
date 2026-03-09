@@ -1,0 +1,25 @@
+flags:
+  require_certificate_validation: True
+name: 'growth_project'
+version: '1.0.0'
+config-version: 2
+# This should match the profile name in your ~/.dbt/profiles.yml
+profile: 'growth_project'
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+# Default configurations for your models
+models:
+  growth_project:
+    +materialized: table
+# These variables are passed into your SQL models
+vars:
+  # This default prevents the model from breaking if you forget the flag, 
+  # but you will override this via CLI: --vars '{"run_date": "2023-01-01"}'
+  run_date: "1990-01-01"

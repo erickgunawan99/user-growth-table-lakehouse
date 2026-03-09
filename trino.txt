@@ -1,0 +1,8 @@
+# Run this inside from root directory of project
+docker exec -it trino trino --execute "CALL hive.system.sync_partition_metadata('raw_zone', 'daily_activity', 'ADD')"
+
+# increment by 1 day each run 2023-01-02 .. 2023-01-03 .. to simulate daily activity
+dbt run --vars '{"run_date": "2023-01-01"}' 
+
+# see iceberg table partiton
+SELECT * FROM iceberg.growth_accounting."user_activity$partitions";

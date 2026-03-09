@@ -1,0 +1,13 @@
+growth_project:
+  target: dev
+  outputs:
+    dev:
+      type: trino
+      method: none # Or ldap/kerberos if had security, but 'none' for local
+      user: admin
+      password: ""
+      host: localhost
+      port: 8080
+      catalog: iceberg # dbt will write to Iceberg catalog by default
+      schema: growth_accounting
+      threads: 4

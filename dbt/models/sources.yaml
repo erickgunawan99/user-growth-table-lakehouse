@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: hive_raw
+    database: hive          # This is the catalog name in Trino
+    schema: raw_zone        # The schema you created above
+    tables:
+      - name: daily_activity
+        description: "Raw user activity logs landed in MinIO as Parquet"
+        columns:
+          - name: event_date
+            description: "The partition column extracted from the folder path"

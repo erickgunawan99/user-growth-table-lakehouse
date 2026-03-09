@@ -1,0 +1,5 @@
+/.venv
+/.trino
+/dbt/target
+/dbt/logs
+/dbt/.user.yml
